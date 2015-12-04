@@ -1,0 +1,20 @@
+<h1>Find for <%= @search_term%></h1>
+
+
+<table border="1">
+  <tr>
+  	<th>Thumbnail</th>
+  	<th>Title</th>
+  	<th>Social rank</th>
+  </tr>
+  <% @recipes.each do |e| %>
+  <tr>
+      <td><%= link_to(image_tag(e["image_url"], height: '100', width: '100'),e["source_url"])%></td>
+      <td><%= link_to(sanitize(e["title"]),e["source_url"]) %></td>
+      <td><%= e["social_rank"] %></td>
+    </tr>
+  <% end %>
+</table>
+
+
+<p>Powered By Food2Fork.com</p>
